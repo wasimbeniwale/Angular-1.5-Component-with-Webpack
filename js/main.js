@@ -2,14 +2,14 @@
 
 import '../css/style.css';
 
-import 'angular';
-import 'angular-ui-router';
+// import 'angular';
+// import 'angular-ui-router';
 
-import './component/app.js';
-import './component/activity.js';
-import './component/profile.js';
+import './component/app/app.js';
+import './component/activity/activity.js';
+import './component/profile/profile.js';
 
-angular.module("app", ['ui.router', "app.component"])
+angular.module("app", ["ui.router", "ngAnimate", "ui.bootstrap", "app.component"])
 
 .config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider){
 
@@ -22,17 +22,17 @@ angular.module("app", ['ui.router', "app.component"])
     var activityState = {
         name: 'activity',
         url: '/activity',
-        component: 'activities'
+        component: 'activity'
     };
 
-    var profileDetails = {
-        name: 'profileDetails',
+    var profile = {
+        name: 'profile',
         url: '/profile',
-        component: 'profileDetails'
+        component: 'profile'
     };
 
     $stateProvider.state(activityState);
-    $stateProvider.state(profileDetails);
+    $stateProvider.state(profile);
 
     $urlRouterProvider.otherwise('/activity');
 }]);

@@ -9,3 +9,8 @@
     width: 60%; 
     display:inline-block;
 }
+
+.main_content_card{
+    margin-top: 51px;
+    padding: 10px;
+}
