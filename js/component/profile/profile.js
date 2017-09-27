@@ -1,11 +1,10 @@
-// import 'angular';
+import 'angular';
 import profileTemplate from './profile.html';
 
 angular.module("app.component").component("profile", {
-    // templateUrl:'templates/profile.html'
     template: profileTemplate,
     controller: ["$scope", function($scope){
-        $scope.name = "In profile controller.";
+        $scope.name = "PROFILE_WELCOME_MESSAGE";
 
         $scope.isCollapsed = false;
     }]

@@ -1,11 +1,24 @@
 var path = require('path');
+var webpack = require('webpack');
+var nodeModulesDir = path.resolve(__dirname, '../node_modules');
 
-module.exports = {
-    //  --entry ./js/app.js otput-filename ./dist/bundle.js
-    entry: './js/main.js',
+var config = {
+    entry: {
+        app: path.resolve(__dirname, './js/main.js'),
+        vendor: [
+            'angular',
+            'angular-animate',
+            'angular-aria',
+            'angular-messages',
+            'angular-sanitize',
+            'angular-ui-router',
+            'angular-ui-bootstrap',
+            'angular-translate'
+        ]
+    },
     output: {
         path: path.resolve(__dirname, 'dist'),
-        filename: 'bundle.js',
+        filename: '[name].js',
         publicPath: '/dist'
     },
     module:{
@@ -24,5 +37,15 @@ module.exports = {
                 ]
             }
         ]
-    }
+    },
+    plugins: [
+        new webpack.optimize.CommonsChunkPlugin({
+            name: 'vendor',
+            filename: 'vendor.js'
+        })
+    ]
 };
+
+
+
+module.exports = config;

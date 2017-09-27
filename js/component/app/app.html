@@ -1,8 +1,9 @@
 <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container-fluid">
         <div class="navbar-header"> 
-            <a href="#" class="navbar-brand">NRC</a>
+            <a href="#" class="navbar-brand">{{ 'APP_TITLE' | translate }}</a>
         </div>
+        <button style="float: right; margin-top:10px;" class="btn btn-info" ng-click="changeLanguage()">{{ 'BUTTON_CHANGE_LANGUAGE' | translate }}</button>
     </div>
 </nav>
 
@@ -10,7 +11,7 @@
     <div class="row">
         <div class="col-md-2" ng-style="sideMenuStyle">
             <div class="list-group" ng-repeat="menu in sideMenus" ng-click="goToState(menu.state)">
-                <div class="list-group-item" ng-class="{active : activeMenu === menu.label.toLowerCase()}" ng-bind="menu.label"></div>
+                <div class="list-group-item" ng-class="{active : activeMenu === menu.label.toLowerCase()}" translate>{{menu.translate_key}}</div>
             </div>
         </div>
         <div class="col-md-10">
@@ -18,45 +19,3 @@
         </div>
     </div>
 </div>
-
-<!-- <div style="width: 100%;">
-    <div class="menu">
-        <a ng-click="goToActivity()">Activity</a>
-        <br/>
-        <a ng-click="goToProfile()">Profile</a>
-    </div>
-    <div class="content">
-        <ui-view></ui-view>
-    </div>
-</div> -->
-<!-- <md-toolbar>
-    <div class="md-toolbar-tools">
-        <h3>
-            <span>NRC App</span>
-        </h3>
-    </div>
-</md-toolbar>
-<div flex layout="row">
-    <md-sidenav flex="20" md-is-locked-open="true" class="md-sidenav-left md-whiteframe-z1" layout-fill>
-        <md-content>
-            <md-list style="padding:0px;">
-                <md-list-item ng-click="goToActivity()">
-                    <md-icon aria-label="email"></md-icon>
-                    <p>Activity</p>
-                </md-list-item>
-                <md-list-item ng-click="goToProfile()">
-                    <md-icon class="md-48 material-icons step"></md-icon>
-                    <p>Profile</p>
-                </md-list-item>
-            </md-list>
-        </md-content>
-    </md-sidenav>
-
-    <div flex="100">
-        <md-card style="margin:0px; padding:5px;" layout-fill>
-            <ui-view></ui-view>
-        </md-card>
-    </div>
-</div> -->
-
-
