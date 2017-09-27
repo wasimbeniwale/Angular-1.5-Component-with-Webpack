@@ -3,15 +3,15 @@
         <div class="navbar-header"> 
             <a href="#" class="navbar-brand">{{ 'APP_TITLE' | translate }}</a>
         </div>
-        <button style="float: right; margin-top:10px;" class="btn btn-info" ng-click="changeLanguage()">{{ 'BUTTON_CHANGE_LANGUAGE' | translate }}</button>
+        <button style="float: right; margin-top:10px;" class="btn btn-info" ng-click="$ctrl.changeLanguage()">{{ 'BUTTON_CHANGE_LANGUAGE' | translate }}</button>
     </div>
 </nav>
 
 <div class="main_content_card">
     <div class="row">
-        <div class="col-md-2" ng-style="sideMenuStyle">
-            <div class="list-group" ng-repeat="menu in sideMenus" ng-click="goToState(menu.state)">
-                <div class="list-group-item" ng-class="{active : activeMenu === menu.label.toLowerCase()}" translate>{{menu.translate_key}}</div>
+        <div class="col-md-2" ng-style="$ctrl.sideMenuStyle">
+            <div class="list-group" ng-repeat="menu in $ctrl.sideMenus" ng-click="$ctrl.goToState(menu.state)">
+                <div class="list-group-item" ng-class="{active : $ctrl.activeMenu === menu.label.toLowerCase()}" translate>{{menu.translate_key}}</div>
             </div>
         </div>
         <div class="col-md-10">

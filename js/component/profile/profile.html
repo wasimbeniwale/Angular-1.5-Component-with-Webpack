@@ -1,8 +1,8 @@
 <div class="container">
-    <p translate> {{ name }} </p>
-    <button type="button" class="btn btn-default" ng-click="isCollapsed = !isCollapsed">Toggle collapse test with ngAnimate</button>
+    <p translate> {{ $ctrl.name }} </p>
+    <button type="button" class="btn btn-default" ng-click="$ctrl.isCollapsed = !$ctrl.isCollapsed">Toggle collapse test with ngAnimate</button>
 	<hr>
-	<div uib-collapse="isCollapsed">
+	<div uib-collapse="$ctrl.isCollapsed">
 		<div class="well well-lg">Some content</div>
 	</div>
 </div>

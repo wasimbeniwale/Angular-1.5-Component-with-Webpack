@@ -3,11 +3,14 @@ import appTemplate from './app.html';
 
 angular.module("app.component", []).component("app", {
     template: appTemplate,
-    controller: ['$scope','$state', '$translate', function($scope, $state, $translate){
+    controller: ['$state', '$translate', function($state, $translate){
 
         var selectedLanguage = "en";
 
-        $scope.sideMenuStyle = {
+        this.sideMenus = [];
+        this.activeMenu = '';
+
+        this.sideMenuStyle = {
             'height': getSideMenuHeight(),
             'overflow': 'scroll',
             'position': 'static'
@@ -36,19 +39,19 @@ angular.module("app.component", []).component("app", {
             return menus;
         }
 
-        $scope.sideMenus = getSideMenus();
-        $scope.activeMenu = $scope.sideMenus[0].name.toLowerCase();
+        this.sideMenus = getSideMenus();
+        this.activeMenu = this.sideMenus[0].name.toLowerCase();
 
-        $scope.goToState = function(stateName){
+        function goToState(stateName){
             $state.go(stateName);
-            setActive(stateName);
+            this.setActive(stateName);
         }
 
         function setActive(menuLabel){
-            $scope.activeMenu = menuLabel.toLowerCase();
+            this.activeMenu = menuLabel.toLowerCase();
         }
 
-        $scope.changeLanguage = function(){
+        function changeLanguage(){
             if(selectedLanguage === "en"){
                 selectedLanguage = "fr";
             } else {
@@ -57,5 +60,8 @@ angular.module("app.component", []).component("app", {
             $translate.use(selectedLanguage);
         }
 
+        this.goToState = goToState,
+        this.changeLanguage = changeLanguage,
+        this.setActive = setActive
     }]
 });
