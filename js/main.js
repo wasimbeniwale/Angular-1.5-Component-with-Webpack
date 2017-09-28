@@ -11,31 +11,47 @@ import 'angular-ui-router';
 import 'angular-ui-bootstrap';
 import 'angular-translate';
 
+import './component/mainComponentModule.js';
 import './component/app/app.js';
 import './component/activity/activity.js';
 import './component/profile/profile.js';
 
-angular.module("app", ["ui.router", "ngAnimate", "ngSanitize", "ui.bootstrap", "app.component", "pascalprecht.translate"])
+import './service/mainServiceModule.js';
+import './service/dataService.js';
+
+angular.module("app", ["ui.router", "ngAnimate", "ngSanitize", "ui.bootstrap", "pascalprecht.translate", "app.component", "app.service"])
 
 .config(['$stateProvider', '$urlRouterProvider', '$translateProvider', function($stateProvider, $urlRouterProvider, $translateProvider){
 
-    var appState = {
-        name: 'app',
-        url: '/app',
-        component: 'app'
-    };
+    class State{
+        constructor(name, url, component){
+            this.name = name;
+            this.url = url;
+            this.component = component;
+        }
+    }
 
-    var activityState = {
-        name: 'activity',
-        url: '/activity',
-        component: 'activity'
-    };
+    // var appState = {
+    //     name: 'app',
+    //     url: '/app',
+    //     component: 'app'
+    // };
 
-    var profile = {
-        name: 'profile',
-        url: '/profile',
-        component: 'profile'
-    };
+    // var activityState = {
+    //     name: 'activity',
+    //     url: '/activity',
+    //     component: 'activity'
+    // };
+
+    // var profile = {
+    //     name: 'profile',
+    //     url: '/profile',
+    //     component: 'profile'
+    // };
+
+    // var appState = new State('app', '/app', 'app');
+    var activityState = new State('activity', '/activity', 'activity');
+    var profile = new State('profile', '/profile', 'profile');
 
     $stateProvider.state(activityState);
     $stateProvider.state(profile);

@@ -1,9 +1,9 @@
 import 'angular';
 import appTemplate from './app.html';
 
-angular.module("app.component", []).component("app", {
+angular.module("app.component").component("app", {
     template: appTemplate,
-    controller: ['$state', '$translate', function($state, $translate){
+    controller: ['$state', '$translate', 'dataService', function($state, $translate, dataService){
 
         var selectedLanguage = "en";
 
@@ -49,6 +49,9 @@ angular.module("app.component", []).component("app", {
 
         function setActive(menuLabel){
             this.activeMenu = menuLabel.toLowerCase();
+            dataService.getData().then(function(res){
+                console.log("data from service: " + res);
+            });
         }
 
         function changeLanguage(){
