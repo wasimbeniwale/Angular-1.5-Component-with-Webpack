@@ -38,21 +38,10 @@ angular.module("app.component").component("app", {
 
         function getSideMenus(){
             var menus = [];
+            
             menus.push(new MenuItem("Activity", "activity", "Activity", "MENU_ITEM_ACTIVITY"));
             menus.push(new MenuItem("Profile", "profile", "Profile", "MENU_ITEM_PROFILE"));
-            // menus.push({
-            //     "label": "Activity",
-            //     "state": "activity",
-            //     "name": "Activity",
-            //     "translate_key": "MENU_ITEM_ACTIVITY"
-            // });
-
-            // menus.push({
-            //     "label": "Profile",
-            //     "state": "profile",
-            //     "name": "Profile",
-            //     "translate_key": "MENU_ITEM_PROFILE"
-            // });
+            menus.push(new MenuItem("Map", "map", "Map", "MENU_ITEM_MAP"));
 
             return menus;
         }

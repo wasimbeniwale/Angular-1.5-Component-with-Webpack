@@ -4,7 +4,7 @@ var nodeModulesDir = path.resolve(__dirname, '../node_modules');
 
 var config = {
     entry: {
-        app: path.resolve(__dirname, './js/main.js'),
+        app: path.resolve(__dirname, './main.js'),
         vendor: [
             'angular',
             'angular-animate',
@@ -13,7 +13,8 @@ var config = {
             'angular-sanitize',
             'angular-ui-router',
             'angular-ui-bootstrap',
-            'angular-translate'
+            'angular-translate',
+            'angular-translate-loader-static-files'
         ]
     },
     output: {

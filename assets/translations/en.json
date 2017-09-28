@@ -1,0 +1,10 @@
+{
+    "APP_TITLE": "App Name",
+    "MENU_ITEM_ACTIVITY": "Activity",
+    "MENU_ITEM_PROFILE": "Profile",
+    "MENU_ITEM_MAP": "Map",
+    "BUTTON_CHANGE_LANGUAGE": "Change Language",
+    "ACTIVITY_WELCOME_MESSAGE": "In activity controller",
+    "PROFILE_WELCOME_MESSAGE": "In profile controller",
+    "MAP_WELCOME_MESSAGE": "In map controller"
+}

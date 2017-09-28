@@ -2,7 +2,7 @@
 
 import 'angular';
 
-angular.module("app.service").factory('dataService', function($q){
+angular.module("app.service").factory('dataService', ["$q", function($q){
 
     function getData(){
         var dfd = $q.defer();
@@ -13,4 +13,4 @@ angular.module("app.service").factory('dataService', function($q){
     return {
         getData: getData
     }
-});
+}]);
