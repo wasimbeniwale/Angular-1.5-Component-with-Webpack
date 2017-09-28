@@ -20,21 +20,39 @@ angular.module("app.component").component("app", {
             return (window.innerHeight) + "px";
         }
 
+        // class MenuItem{
+        //     constructor(label, state, name, translate_key){
+        //         this.label = label;
+        //         this.state = state;
+        //         this.name = name;
+        //         this.translate_key = translate_key;
+        //     }
+        // }
+
+        function MenuItem(label, state, name, translate_key){
+            this.label = label;
+            this.state = state;
+            this.name = name;
+            this.translate_key = translate_key;
+        }
+
         function getSideMenus(){
             var menus = [];
-            menus.push({
-                "label": "Activity",
-                "state": "activity",
-                "name": "Activity",
-                "translate_key": "MENU_ITEM_ACTIVITY"
-            });
+            menus.push(new MenuItem("Activity", "activity", "Activity", "MENU_ITEM_ACTIVITY"));
+            menus.push(new MenuItem("Profile", "profile", "Profile", "MENU_ITEM_PROFILE"));
+            // menus.push({
+            //     "label": "Activity",
+            //     "state": "activity",
+            //     "name": "Activity",
+            //     "translate_key": "MENU_ITEM_ACTIVITY"
+            // });
 
-            menus.push({
-                "label": "Profile",
-                "state": "profile",
-                "name": "Profile",
-                "translate_key": "MENU_ITEM_PROFILE"
-            });
+            // menus.push({
+            //     "label": "Profile",
+            //     "state": "profile",
+            //     "name": "Profile",
+            //     "translate_key": "MENU_ITEM_PROFILE"
+            // });
 
             return menus;
         }

@@ -23,12 +23,18 @@ angular.module("app", ["ui.router", "ngAnimate", "ngSanitize", "ui.bootstrap", "
 
 .config(['$stateProvider', '$urlRouterProvider', '$translateProvider', function($stateProvider, $urlRouterProvider, $translateProvider){
 
-    class State{
-        constructor(name, url, component){
-            this.name = name;
-            this.url = url;
-            this.component = component;
-        }
+    // class State{
+    //     constructor(name, url, component){
+    //         this.name = name;
+    //         this.url = url;
+    //         this.component = component;
+    //     }
+    // }
+
+    function State(name, url, component){
+        this.name = name;
+        this.url = url;
+        this.component = component;
     }
 
     // var appState = {
