@@ -41,7 +41,7 @@ angular.module("app.component").component("app", {
             
             menus.push(new MenuItem("Activity", "activity", "Activity", "MENU_ITEM_ACTIVITY"));
             menus.push(new MenuItem("Profile", "profile", "Profile", "MENU_ITEM_PROFILE"));
-            menus.push(new MenuItem("Map", "map", "Map", "MENU_ITEM_MAP"));
+            menus.push(new MenuItem("MapView", "mapView", "MapView", "MENU_ITEM_MAP"));
 
             return menus;
         }

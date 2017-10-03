@@ -27,6 +27,7 @@
     "angular-translate-loader-static-files": "^2.15.2",
     "angular-ui-bootstrap": "^2.5.0",
     "angular-ui-router": "^1.0.3",
-    "lodash": "^4.17.4"
+    "lodash": "^4.17.4",
+    "ngmap": "^1.18.4"
   }
 }

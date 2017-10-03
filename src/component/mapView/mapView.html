@@ -1,0 +1,43 @@
+<div class="container">
+        <div map-lazy-load="https://maps.google.com/maps/api/js" 
+        map-lazy-load-params="{{$ctrl.googleMapsUrl}}">
+            
+            <div class="row">
+                <div class="form-group">
+                    <input places-auto-complete size=40
+                        placeholder="Source Address"
+                        ng-model="$ctrl.sourceAddress"
+                        component-restrictions="{country:'au'}"
+                        types="$ctrl.types"
+                        on-place-changed="$ctrl.sourcePlaceChanged()" />
+                </div>
+            </div>
+    
+            <div class="row">
+                <div class="form-group">
+                    <input places-auto-complete size=40
+                        placeholder="Destination Address"
+                        ng-model="$ctrl.destinationAddress"
+                        component-restrictions="{country:'au'}"
+                        types="$ctrl.types"
+                        on-place-changed="$ctrl.destinationPlaceChanged()" />
+                </div>
+            </div>
+    
+            <div class="row">
+                <button class="btn btn-primary" ng-click="$ctrl.showRoute()">Show Route</button>
+                    
+                <p ng-bind="$ctrl.sourceAddress"></p>
+                <p ng-bind="$ctrl.destinationAddress"></p>
+            </div>
+            
+            <ng-map zoom="3" ng-if="$ctrl.doShowMap">
+                <directions
+                    draggable="true"
+                    travel-mode="DRIVING"
+                    origin="{{$ctrl.sourceAddress}}"
+                    destination="{{$ctrl.destinationAddress}}">
+                </directions>
+            </ng-map>
+        </div>
+</div>
